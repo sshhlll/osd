@@ -38,6 +38,7 @@ Open source design projects
 ```python
 def hello():
     printf("hello")
+```
 
 ---
 ***
