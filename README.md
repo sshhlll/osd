@@ -1,52 +1,39 @@
-# osd
-# osd
-Open source design projects
+# 실시간 눈 깜빡임 감지 시스템 (Real-time Blink Detection System)
 
-# 제목 1
-## 제목 2
-### 제목 3
-
-문단은 빈 줄로 구분합니다.
-
-줄바꿈은 문장 끝에 두 칸 공백.. 또는 <br> 사용.  되나?
-
-*기울임* 또는 _기울임_
-**굵게*** 또는 __굵게__
-~~취소선~~
-
-- 항목 A
-  - 하위 항목
-* 항목 B
-+ 항목 C
-
-1. 첫째
-2. 둘째
-   1) 하위
-  
-[표시 텍스트](https://naver.com "선택적 제목")
-[참조식 링크][ref]
-
-[ref]: https://google.com "선택적 제목"
-
-![대체텍스트](이미지-주소 "선택적 제목")
-
-> 인용문
->> 중첩 인용
-
-인라인 `code` 예시
-
-```python
-def hello():
-    printf("hello")
-```
+본 프로젝트는 **MediaPipe Face Mesh**와 **적응형 임계값 알고리즘(Adaptive Threshold Algorithm)**을 활용하여  
+실시간으로 사용자의 **눈 깜빡임 빈도를 분석하고 경고를 제공하는 시스템**입니다.  
 
 ---
-***
-___
 
-- [] 할 일 1
-- [X] 완료 2
+##  주요 기능 (Features)
+- 💻 **실시간 영상 입력(Video Input)**: 내장 웹캠을 통해 초당 프레임 단위로 영상 데이터를 수집  
+- 🧩 **얼굴 특징점 검출(Landmark Detection)**: MediaPipe Face Mesh를 이용해 468개의 3D 얼굴 특징점 추출  
+- 👁️ **EAR 계산(Eye Aspect Ratio)**: 눈 개폐 상태를 수학적으로 계산하여 깜빡임 감지  
+- ⚙️ **적응형 임계값 설정(Adaptive Thresholding)**: 사용자별 눈 모양 및 환경 조건에 맞게 임계값 자동 조정  
+- 🔔 **경고 피드백(Alert Feedback)**: 분당 깜빡임 수(BPM)를 계산하고 과도한 깜빡임 시 시각적 경고 제공  
 
-각주 예시[^1]
-[^1]: 각주 내용
+---
+
+##  기술 스택 (Tech Stack)
+| 항목 | 사용 기술 |
+|------|------------|
+| 개발 언어 | Python |
+| 주요 라이브러리 | OpenCV, MediaPipe, NumPy |
+| GUI | Tkinter / PyQt |
+| 분석 알고리즘 | EAR + Adaptive Threshold |
+
+---
+
+
+[참고 연구](https://isg-journal.com/isjea/article/view/505 "클릭") 
+
+---
+
+##  실행 방법 (How to Run)
+```bash
+# 필수 라이브러리 설치
+pip install opencv-python mediapipe numpy
+
+# 프로그램 실행
+python main.py
 
