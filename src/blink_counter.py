@@ -4,7 +4,6 @@ from FaceMeshModule import FaceMeshGenerator
 from utils import DrawingUtils
 import os
 
-#Temporarily Used Line
 
 class BlinkCounter:
     """
